@@ -9,9 +9,6 @@ export default function Home() {
       <Hero />
       <TopProducts />
       <Products />
-      <Products />
-      <Products />
-      <Products />
       {/* <Cart /> */}
     </>
   );

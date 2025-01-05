@@ -3,7 +3,11 @@ import React from "react";
 import Image from "next/image";
 import BreadcrumbProduct from "@/components/product-page/BreadcrumbProduct";
 
-export default function ProductDetail() {
+export default function ProductDetail({
+  params,
+}: {
+  params: { slug: string[] };
+}) {
   return (
     <div className="py-8 bg-background text-foreground">
       <BreadcrumbProduct title="Dresse" />

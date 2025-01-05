@@ -24,7 +24,7 @@ export default function Navbar() {
             <Input
               type="text"
               placeholder="Rechercher des produits"
-              className="bg-secondary border-none pl-8 pr-2 w-full text-xs md:text-xs text-secondary-foreground"
+              className="bg-secondary/60 border-none pl-8 pr-2 w-full text-xs md:text-xs text-secondary-foreground"
             />
           </div>
         </div>
@@ -46,7 +46,7 @@ export default function Navbar() {
             <a href="/cart" className="flex items-center space-x-2">
               <ShoppingBag size={24} className="text-foreground" />{" "}
               {/* Icône Panier */}
-              <span className="absolute -top-2 -right-2 bg-primary text-white text-xs px-1.5 py-0.5 *lg:px-2 *lg:py-1 rounded-full">
+              <span className="absolute -top-2 -right-2 bg-primary text-white text-xs px-1.5 py-0.5 rounded-full">
                 {cartCount}
               </span>
             </a>

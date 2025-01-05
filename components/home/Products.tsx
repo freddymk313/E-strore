@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { Button } from "../ui/button";
+import Rating from "../Rating";
 
 interface Product {
   id: number;
@@ -88,7 +89,7 @@ interface Product {
 //   },
 // ];
 
-const sampleProducts: Product = [
+const sampleProducts = [
   // Remplacez par vos données réelles de produits
   {
     id: 1,
@@ -195,8 +196,9 @@ export default function ProductsSection() {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
                 {categoryProducts.map((product) => (
-                  <div
+                  <Link
                     key={product.id}
+                    href={`/product/${product.id}/${product.name}`}
                     className="bg-white rounded-lg shadow-sm p-3"
                   >
                     <Image
@@ -207,10 +209,24 @@ export default function ProductsSection() {
                       className="w-full h-80 md:h-52 object-cover rounded-md mb-4"
                     />
                     <h4 className="text-lg font-medium mb-2">{product.name}</h4>
+                    <div className="flex items-end mb-1 xl:mb-2">
+                      <Rating
+                        initialValue={product.rating}
+                        allowFraction
+                        SVGclassName="inline-block"
+                        emptyClassName="fill-gray-50"
+                        size={18}
+                        readonly
+                      />
+                      <span className="text-black text-xs xl:text-sm ml-[11px] xl:ml-[13px] pb-0.5 xl:pb-0">
+                        {product.rating.toFixed(1)}
+                        <span className="text-black/60">/5</span>
+                      </span>
+                    </div>
                     <p className="text-primary font-semibold">
                       {product.price}
                     </p>
-                  </div>
+                  </Link>
                 ))}
               </div>
 
@@ -220,10 +236,10 @@ export default function ProductsSection() {
                   className="flex items-center border transition border-gray-300 rounded-lg py-2.5 px-4 group hover:bg-primary"
                 >
                   {/* <button> */}
-                    <span className="text-primary group-hover:text-white block text-sm mr-1.5">
-                      Voir Tous
-                    </span>
-                    <ChevronRight size={16} className=" group-hover:text-white" />
+                  <span className="text-primary group-hover:text-white block text-sm mr-1.5">
+                    Voir Tous
+                  </span>
+                  <ChevronRight size={16} className=" group-hover:text-white" />
                   {/* </button> */}
                 </Link>
               </div>

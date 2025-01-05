@@ -4,6 +4,8 @@ import { motion, useAnimation } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "../ui/button";
 import Image from "next/image";
+import Rating from "../Rating";
+import Link from "next/link";
 
 const topProducts = [
   // Remplacez par vos données réelles de produits
@@ -114,8 +116,9 @@ export default function TopProducts() {
             animate={controls}
           >
             {topProducts.map((product) => (
-              <div
-                key={product.id}
+              <Link
+              key={product.id}
+              href={`/product/${product.id}/${product.name}`}
                 className="min-w-[250px] bg-white *border *border-gray-200 rounded-lg shadow-sm p-2 md:p-3 flex-shrink-0"
               >
                 <Image
@@ -132,7 +135,7 @@ export default function TopProducts() {
                     allowFraction
                     SVGclassName="inline-block"
                     emptyClassName="fill-gray-50"
-                    size={19}
+                    size={18}
                     readonly
                   />
                   <span className="text-black text-xs xl:text-sm ml-[11px] xl:ml-[13px] pb-0.5 xl:pb-0">
@@ -141,7 +144,7 @@ export default function TopProducts() {
                   </span>
                 </div>
                 <p className="text-primary font-semibold">{product.price}</p>
-              </div>
+              </Link>
             ))}
           </motion.div>
 
