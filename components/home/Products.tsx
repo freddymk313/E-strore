@@ -1,5 +1,5 @@
 "use client";
-import { ChevronRight } from "lucide-react";
+import { ChevronRight, Plus, PlusSquare } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
@@ -223,9 +223,12 @@ export default function ProductsSection() {
                         <span className="text-black/60">/5</span>
                       </span>
                     </div>
-                    <p className="text-primary font-semibold">
-                      {product.price}
-                    </p>
+                    <div className="flex items-center justify-between">
+                      <p className="text-primary font-semibold">
+                        {product.price}
+                      </p>
+                      {/* <Plus className="h-5 w-5 text-primary" /> */}
+                    </div>
                   </Link>
                 ))}
               </div>

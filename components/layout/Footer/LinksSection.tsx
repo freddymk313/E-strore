@@ -115,7 +115,7 @@ const LinksSection = () => {
     <>
       {footerLinksData.map((item) => (
         <section className="flex flex-col mt-5" key={item.id}>
-          <h3 className="font-medium text-primary-foreground text-sm md:text-base uppercase tracking-widest mb-6">
+          <h3 className="*font-medium text-primary-foreground text-sm md:text-base uppercase tracking-widest mb-6">
             {item.title}
           </h3>
           {item.children.map((link) => (
